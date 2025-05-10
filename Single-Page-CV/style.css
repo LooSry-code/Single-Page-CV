@@ -1,0 +1,371 @@
+/* --- Minimalist & Professional Theme --- */
+:root {
+    --color-primary: #333; /* Warna teks utama gelap */
+    --color-secondary: #555; /* Warna teks sekunder/detail */
+    --color-accent: #007bff; /* Warna aksen untuk link/garis */
+    --color-background: #f8f9fa; /* Latar belakang sangat terang */
+    --color-card-background: #ffffff; /* Latar belakang card/bagian putih */
+    --color-border: #dee2e6; /* Warna border halus */
+
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --spacing-xlarge: 40px;
+
+    --font-family-primary: 'Arial', sans-serif; /* Font utama yang bersih */
+    --font-family-secondary: 'Georgia', serif; /* Font sekunder untuk judul (opsional) */
+}
+
+/* --- General Styles --- */
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: var(--spacing-medium);
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+/* --- Layout Container --- */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: var(--spacing-medium) auto;
+    background-color: var(--color-card-background);
+    padding: var(--spacing-large);
+    border: 1px solid var(--color-border); /* Border halus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Bayangan sangat lembut */
+    border-radius: 5px; /* Sudut sedikit membulat */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xlarge); /* Jarak antar elemen flex (header, main, footer) */
+}
+
+/* --- Header Styles --- */
+header {
+    text-align: center;
+    padding-bottom: var(--spacing-medium);
+    border-bottom: 1px solid var(--color-border); /* Garis pemisah halus */
+}
+
+header h1 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 2.8em; /* Ukuran font profesional */
+    margin-bottom: var(--spacing-small);
+    text-transform: none; /* Hapus uppercase */
+    letter-spacing: normal; /* Hapus jarak antar huruf */
+    font-family: var(--font-family-secondary); /* Gunakan font sekunder jika ada */
+}
+
+header p {
+    color: var(--color-secondary);
+    font-size: 1.3em;
+    margin-bottom: var(--spacing-medium);
+    font-weight: normal; /* Kembalikan ke normal */
+}
+
+address {
+    font-style: normal;
+    color: var(--color-secondary);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: var(--spacing-medium);
+}
+
+address p {
+    margin: 5px 0;
+}
+
+address a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.2s ease-in-out;
+}
+
+address a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* --- Main Content Sections --- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xlarge); /* Jarak antar section */
+}
+
+main section {
+    padding-bottom: var(--spacing-large);
+    border-bottom: 1px solid var(--color-border); /* Garis pemisah halus */
+}
+
+main section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+section h2 {
+    color: var(--color-primary);
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: var(--spacing-medium);
+    text-transform: none; /* Hapus uppercase */
+    letter-spacing: normal; /* Hapus jarak antar huruf */
+    border-left: 4px solid var(--color-accent); /* Garis dekoratif halus */
+    padding-left: var(--spacing-small);
+    background-color: transparent; /* Hapus background judul */
+    display: block; /* Kembali ke display block */
+    box-shadow: none; /* Hapus shadow judul */
+    font-family: var(--font-family-secondary); /* Gunakan font sekunder jika ada */
+}
+
+/* --- Article Styles --- */
+article {
+    margin-bottom: var(--spacing-large); /* Jarak antar article dalam section */
+    padding: 0; /* Hapus padding article */
+    background-color: transparent; /* Hapus background article */
+    border: none; /* Hapus border article */
+    box-shadow: none; /* Hapus shadow article */
+    border-radius: 0;
+    transition: none; /* Hapus transisi hover article */
+    position: static; /* Kembali ke posisi static */
+    z-index: auto; /* Kembali ke z-index default */
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+article:hover {
+    transform: none; /* Hapus transform hover */
+    box-shadow: none; /* Hapus shadow hover */
+    z-index: auto; /* Kembali ke z-index default */
+}
+
+article h3 {
+    color: var(--color-primary);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+    border-bottom: 1px dashed var(--color-border); /* Garis bawah putus-putus halus */
+    padding-bottom: 5px;
+}
+
+article p {
+    margin: 8px 0; /* Sedikit lebih banyak margin */
+    font-size: 1em;
+    color: var(--color-secondary); /* Warna teks paragraf sekunder */
+}
+
+article time {
+    color: var(--color-secondary); /* Waktu pakai warna sekunder */
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+article ul {
+    list-style: disc; /* Gunakan bullet point standar */
+    margin: var(--spacing-small) 0 0 var(--spacing-medium); /* Margin dan indentasi standar */
+    padding: 0;
+}
+
+article ul li {
+    margin-bottom: 8px;
+    padding-left: 0; /* Hapus padding kiri custom bullet */
+    position: static; /* Kembali ke posisi static */
+    transition: none; /* Hapus transisi hover item list */
+    color: var(--color-primary); /* Warna teks item list utama */
+}
+
+/* Hapus custom bullet point */
+article ul li::before {
+    content: none;
+}
+
+/* Hapus hover effect for list items */
+article ul li:hover {
+    transform: none;
+    color: var(--color-primary); /* Kembali ke warna utama */
+}
+
+
+/* --- Link Styles (General) --- */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Style for links within article (e.g., project links) */
+article a {
+    display: inline; /* Kembali ke display inline */
+    margin-top: 0; /* Hapus margin atas */
+    padding: 0; /* Hapus padding */
+    border: none; /* Hapus border */
+    background-color: transparent; /* Hapus background */
+    color: var(--color-accent); /* Warna link standar */
+    font-weight: normal; /* Kembali ke normal */
+    text-transform: none; /* Hapus uppercase */
+    font-size: 1em; /* Kembali ke ukuran standar */
+    transition: color 0.2s ease-in-out;
+    box-shadow: none; /* Hapus shadow tombol */
+    border-radius: 0; /* Hapus border radius */
+}
+
+article a:hover {
+    background-color: transparent; /* Hapus background hover */
+    color: var(--color-primary); /* Warna hover standar */
+    border-color: transparent; /* Hapus border hover */
+    box-shadow: none; /* Hapus shadow hover */
+    text-decoration: underline;
+}
+
+
+/* --- Footer Styles --- */
+footer {
+    text-align: center;
+    padding-top: var(--spacing-medium);
+    border-top: 1px solid var(--color-border); /* Garis pemisah halus */
+    color: var(--color-secondary); /* Warna teks sekunder */
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+footer time {
+     font-weight: normal;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-small);
+    }
+
+    .container {
+        padding: var(--spacing-medium);
+        margin: var(--spacing-small) auto;
+        gap: var(--spacing-large); /* Kurangi jarak antar elemen di container */
+    }
+
+    main {
+        gap: var(--spacing-large); /* Kurangi jarak antar section */
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+         font-size: 1.1em;
+    }
+
+    address {
+        padding: 0; /* Hapus padding address di mobile */
+        font-size: 0.9em;
+        margin-top: var(--spacing-medium);
+    }
+
+    section h2 {
+        font-size: 1.8em;
+        margin-bottom: var(--spacing-medium);
+        padding-left: var(--spacing-small);
+    }
+
+    article {
+        margin-bottom: var(--spacing-medium); /* Kurangi jarak antar article */
+    }
+
+    article:last-child {
+        margin-bottom: 0;
+    }
+
+    article h3 {
+        font-size: 1.3em;
+    }
+
+     article p {
+         font-size: 0.9em;
+     }
+
+     article ul {
+        margin-top: var(--spacing-small);
+        margin-left: var(--spacing-medium);
+     }
+
+     article ul li {
+         margin-bottom: 5px;
+     }
+
+     article a {
+         font-size: 0.9em;
+     }
+}
+
+ @media (max-width: 480px) {
+    body {
+        padding: var(--spacing-small);
+    }
+
+    .container {
+        padding: var(--spacing-medium);
+        gap: var(--spacing-medium); /* Kurangi jarak lagi */
+    }
+
+    main {
+        gap: var(--spacing-medium); /* Kurangi jarak lagi */
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+     header p {
+         font-size: 1em;
+     }
+
+     address {
+         font-size: 0.8em;
+     }
+
+     section h2 {
+         font-size: 1.6em;
+         margin-bottom: var(--spacing-medium);
+     }
+
+     article {
+         margin-bottom: var(--spacing-medium);
+     }
+
+     article h3 {
+         font-size: 1.2em;
+     }
+
+     article p {
+         font-size: 0.85em;
+     }
+
+     article ul {
+        margin-left: var(--spacing-small);
+     }
+
+     article ul li {
+         margin-bottom: 5px;
+     }
+
+     article a {
+         font-size: 0.85em;
+     }
+ }
